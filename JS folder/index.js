@@ -1,11 +1,23 @@
+const getFromText = (event, text) => {
+    event.preventDefault();
+    document.getElementById('customDropDown1').querySelector('a').innerText = text
+}
+const getToText = (event, text) => {
+    event.preventDefault();
+    document.getElementById('customDropDown2').querySelector('a').innerText = text
+}
 
 
 document.getElementById('convert-btn').addEventListener('click', () => {
 
     // find - from which , user want to convert
-    const convertFrom = document.getElementById('convert-from').value
+
+    // const convertFrom = document.getElementById('convert-from').value
+    const convertFrom = document.getElementById('customDropDown1').querySelector('a').innerText
+
     // find - to which , user want to convert
-    const convertTo = document.getElementById('convert-to').value
+    const convertTo = document.getElementById('customDropDown2').querySelector('a').innerText
+
     // get user inputted number
     const fromValue = document.getElementById('from-value').value
     // convert the inputed value into decimal
@@ -58,4 +70,6 @@ const handleAllConvert = (convertTo, decimalValue) => {
         console.log('same type conversion')
     }
 }
+
+// get dropdown text
 
